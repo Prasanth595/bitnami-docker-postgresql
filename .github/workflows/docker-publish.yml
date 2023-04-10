@@ -81,9 +81,64 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Sign the published Docker image 10/debian-10
-        if: ${{ github.event_name != 'pull_request' }}
-        env:
-          COSIGN_EXPERIMENTAL: "true"
-        run: echo "${{ steps.meta.outputs.tags }}-10-debian-10" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }}
+      - name: Build and push Docker image
+        id: build-and-push-11-debian-10
+        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+        with:
+          context: ./11/debian-10
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          
+      - name: Build and push Docker image
+        id: build-and-push-12-debian-10
+        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+        with:
+          context: ./12/debian-10
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          
+      - name: Build and push Docker image
+        id: build-and-push-13-debian-10
+        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+        with:
+          context: ./13/debian-10
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          
+      - name: Build and push Docker image
+        id: build-and-push-14-debian-10
+        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+        with:
+          context: ./14/debian-10
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          
+      - name: Build and push Docker image
+        id: build-and-push-96-debian-10
+        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+        with:
+          context: ./9.6/debian-10
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+#       - name: Sign the published Docker image 10/debian-10
+#         if: ${{ github.event_name != 'pull_request' }}
+#         env:
+#           COSIGN_EXPERIMENTAL: "true"
+#         run: echo "${{ steps.meta.outputs.tags }}-10-debian-10" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }}
       
