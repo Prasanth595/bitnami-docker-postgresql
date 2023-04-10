@@ -76,7 +76,7 @@ jobs:
         with:
           context: ./10/debian-10
           push: ${{ github.event_name != 'pull_request' }}
-          tags: 10-debian-10-${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
