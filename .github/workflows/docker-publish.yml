@@ -87,7 +87,7 @@ jobs:
         with:
           context: ./11/debian-10
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          tags: ${{ steps.meta.outputs.tags }}-11-debian-10
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -98,7 +98,7 @@ jobs:
         with:
           context: ./12/debian-10
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          tags: ${{ steps.meta.outputs.tags }}-12-debian-10
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -109,7 +109,7 @@ jobs:
         with:
           context: ./13/debian-10
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          tags: ${{ steps.meta.outputs.tags }}-13-debian-10
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -120,7 +120,7 @@ jobs:
         with:
           context: ./14/debian-10
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          tags: ${{ steps.meta.outputs.tags }}-14-debian-10
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -131,7 +131,7 @@ jobs:
         with:
           context: ./9.6/debian-10
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}-10-debian-10
+          tags: ${{ steps.meta.outputs.tags }}-9-6-debian-10
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
